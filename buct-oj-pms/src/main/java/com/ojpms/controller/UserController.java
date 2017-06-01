@@ -36,4 +36,8 @@ public class UserController {
 		res.put("result", "hello");
 		return res;
 	}
+	@RequestMapping("/test")
+	public Object get(){
+		return null;
+	}
 }
