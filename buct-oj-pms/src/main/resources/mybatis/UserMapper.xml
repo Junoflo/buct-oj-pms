@@ -10,5 +10,26 @@
     <select id="getAllUser" resultMap="UserResultMap">
     	select * from user
     </select>
-    
+    <select id="getUserByNameAndPass" resultMap="UserResultMap">	
+    	select * from user
+    	where name=#{name} and pswd=#{pass}
+    </select>
+    <select id="getById" resultMap="UserResultMap">
+    	select * from user
+    	where id=#{id}
+    </select>
+    <insert id="insertUser" parameterType="com.ojpms.dto.User" keyProperty="id" useGeneratedKeys="true">
+    	insert into user 
+    		(id, name,pswd)
+    	values 
+    		(#{id,jdbcType=BIGINT},#{name,jdbcType=VARCHAR},#{pswd,jdbcType=VARCHAR}) 
+    </insert>
+    <select id="getByName" parameterType="string" resultMap="UserResultMap">
+    	select * from user
+    	where name=#{name}
+    </select>
+    <update id="updatePass" parameterType="string">
+    	update user set pswd=#{pass} 
+    	where name=#{name}
+    </update>
 </mapper>

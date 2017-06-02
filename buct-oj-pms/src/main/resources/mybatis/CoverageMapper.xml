@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ojpms.dao.CoverageDao">
+	 <resultMap id="CoverageMap" type="com.ojpms.dto.Coverage">
+        <id column="pid" property="pid" jdbcType="BIGINT"/>
+        <result column="rate" property="coverageRate" jdbcType="DOUBLE"/>
+        <result column="uncovered_lines" property="uncoveredLines" jdbcType="VARCHAR"/>
+        <result column="standard_program" property="standardProgram" jdbcType="VARCHAR"/>
+        <result column="report" property="report" jdbcType="VARCHAR"/>
+    </resultMap>
+    
+	<insert id="insertCoverage" parameterType="com.ojpms.dto.Coverage" keyProperty="pid" useGeneratedKeys="false">
+		insert into coverage(
+			pid,rate,uncovered_lines,
+			standard_program,report)
+		values(#{pid},#{coverageRate},#{uncoveredLines},
+			#{standardProgram},#{report})
+	</insert>
+	<select id="queryByPid" resultMap="CoverageMap">
+		select * from coverage
+		where pid=#{0}
+	</select>
+	</mapper>

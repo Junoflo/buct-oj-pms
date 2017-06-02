@@ -1,17 +1,12 @@
 package com.ojpms.controller;
-
-import java.util.List;
-
-import javax.websocket.server.PathParam;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.ojpms.dao.UserDao;
+import com.ojpms.common.MyUtils;
 import com.ojpms.dto.User;
+import com.ojpms.service.UserService;
 
 import net.sf.json.JSONObject;
 
@@ -20,26 +15,64 @@ import net.sf.json.JSONObject;
 public class UserController {
 	
 	@Autowired
-	UserDao userDao;
-	
-	@RequestMapping("/hello")
-	public String hello(){
-		System.out.println("asd");
-		return "hello";
-	}
-	
-	@RequestMapping("/get")
+	UserService userService;
+
+	@RequestMapping("/login")
 	@ResponseBody
-	public Object get(Long id,String name){
-		System.out.println(id + " " + name);
+	public Object login(String jsonString){
+		System.out.println(jsonString);
+		String str = MyUtils.decoder(jsonString);
+		System.out.println("解析过后:" + str);
+		JSONObject jsonObject = JSONObject.fromObject(str);
+		User user = userService.query(jsonObject.getString("name"), jsonObject.getString("pass"));
 		JSONObject res = new JSONObject();
-		res.put("result", "hello");
+		System.out.println(user);
+		if(user == null){
+			res.put("result", "failed");
+			return res;
+		}
+		res.put("result", user);
 		return res;
 	}
-	@RequestMapping("/test")
-	public Object get(){
-		return null;
+	@RequestMapping("/register")
+	@ResponseBody
+	public Object register(String jsonString){
+		JSONObject res = new JSONObject();
+		String str = MyUtils.decoder(jsonString);
+		JSONObject jsonObject = JSONObject.fromObject(str);
+		String name = jsonObject.getString("name");
+		String pswd = jsonObject.getString("pswd"); 
+		
+		if(userService.existsUser(name)){
+			res.put("result", "failed");
+			res.put("msg", "已经存在的用户名");
+			return res;
+		}
+		User user = new User();
+		user.setName(name);
+		user.setPswd(pswd);
+		if(userService.addUser(user) > 0){
+			res.put("result", "success");
+			return res;
+		}
+		res.put("result", "failed");
+		res.put("msg", "注册失败:内部错误");
+		return res;
 	}
-	
+	@RequestMapping("/resetPswd")
+	@ResponseBody
+	public Object resetPswd(String jsonString){
+		JSONObject res = new JSONObject();
+		String str = MyUtils.decoder(jsonString);
+		JSONObject jsonObject = JSONObject.fromObject(str);
+		String name = jsonObject.getString("name");
+		String newPass = jsonObject.getString("new_pass"); 
+		if(userService.resetPass(name, newPass) > 0){
+			res.put("result", "success");
+			return res;
+		}
+		res.put("result", "failed");
+		return res;
+	}
 	
 }

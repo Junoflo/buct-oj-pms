@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ojpms.dao.ProblemDao">
+	 <resultMap id="ProblemMap" type="com.ojpms.dto.Problem">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="uid" property="uid" jdbcType="BIGINT"/>
+        <result column="problem_title" property="problemTitle" jdbcType="VARCHAR"/>
+        <result column="problem_desc" property="problemDesc" jdbcType="VARCHAR"/>
+        <result column="input_desc" property="inputDesc" jdbcType="VARCHAR"/>
+        <result column="output_desc" property="outputDesc" jdbcType="VARCHAR"/>
+        <result column="input_sample" property="inputSample" jdbcType="INTEGER"/>
+        <result column="notice" property="notice" jdbcType="VARCHAR"/>
+        <result column="source" property="source" jdbcType="VARCHAR"/>
+        <result column="standard_program_path" property="standardProgramPath" jdbcType="VARCHAR"/>
+        <result column="standard_program_name" property="standardProgramName" jdbcType="VARCHAR"/>
+        <result column="random_program_path" property="randomProgramPath" jdbcType="VARCHAR"/>
+        <result column="gcov_file_path" property="gcovFilePath" jdbcType="VARCHAR"/>
+        <result column="gcov_file_name" property="gcovFileName" jdbcType="VARCHAR"/>
+        <result column="submit_time" property="submitTime" jdbcType="VARCHAR"/>
+        <result column="workdir" property="workdir" jdbcType="VARCHAR"/>
+        <result column="workstation" property="workstation" jdbcType="VARCHAR"/>
+    </resultMap>
+    
+	<insert id="insertProblem" parameterType="com.ojpms.dto.Problem" keyProperty="id" useGeneratedKeys="true">
+		insert into problem
+			(id,uid,problem_title,
+			problem_desc,input_desc,output_desc,
+			input_sample,output_sample,notice,
+			source,standard_program_path,standard_program_name,
+			random_program_path,random_program_name,gcov_file_path,
+			gcov_file_name,submit_time,workdir,
+			workstation)
+		values
+			(#{id},#{uid},#{problemTitle},
+			#{problemDesc},#{inputDesc},#{outputDesc},
+			#{inputSample},#{outputSample},#{notice},
+			#{source},#{standardProgramPath},#{standardProgramName},
+			#{randomProgramPath},#{randomProgramName},#{gcovFilePath},
+			#{gcovFileName},#{submitTime},#{workdir},
+			#{workstation})
+	</insert>
+	<select id="queryByUid" resultMap="ProblemMap">
+		select * from problem
+		where uid=#{0}
+	</select>
+	<select id="queryByPid" resultMap="ProblemMap">
+		select * from problem
+		where id=#{0}
+	</select>
+	
+	
+</mapper>
