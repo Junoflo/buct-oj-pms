@@ -41,7 +41,7 @@
             <div class="container-fluid">
                 <ul class="nav pull-right">
                     <li id="fat-menu" class="dropdown">
-                        <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                        <a href="#" id="drop3" role="button" class="dropdown-toggle">
                             <i class="icon-user"></i>
                             <c:set var="str" scope="page" value="${curent_user.name}"/>
                             <c:if test="${empty str}">
@@ -54,7 +54,7 @@
                         </a>
                     </li>
                 </ul>
-                <a class="brand" href="index.jsp"><span class="first"></span> <span class="second">OJ出题管理系统</span></a>
+                <span style='margin-left:10px'><a href='index.jsp'><font size='5'>OJ出题管理系统</font></a></span>
             </div>
         </div>
     </div>
@@ -65,22 +65,22 @@
                   <div class="nav-header" data-toggle="collapse" data-target="#dashboard-menu"><i class="icon-dashboard"></i>功能列表</div>
                     <ul id="dashboard-menu" class="nav nav-list collapse in">
                         <li><a href="index.jsp">首页</a></li>
-                        <li ><a href="record.jsp">提交记录</a></li>
-                        <li ><a href="newtask－select.jsp">新建任务</a></li>
-                        <li ><a href="export.jsp">导出任务</a></li>
-                        <li ><a href="spider.jsp">爬虫抓题</a></li>
+                        <li ><a href="./pages/record.jsp">提交记录</a></li>
+                        <li ><a href="./pages/newtask-select.jsp">新建任务</a></li>
+                        <li ><a href="./pages/export.jsp">导出任务</a></li>
+                        <li ><a href="./pages/spider.jsp">爬虫抓题</a></li>
                     </ul>
                 <div class="nav-header" data-toggle="collapse" data-target="#accounts-menu"><i class="icon-briefcase"></i>账户</div>
                 <ul id="accounts-menu" class="nav nav-list collapse in">
-                  <li ><a href="sign-in.html">登陆</a></li>
-                  <li ><a href="sign-up.html">注册</a></li>
-                  <li ><a href="reset-password.html">忘记密码</a></li>
+                  <li ><a href="./pages/sign-in.html">登陆</a></li>
+                  <li ><a href="./pages/sign-up.html">注册</a></li>
+                  <li ><a href="./pages/reset-password.html">忘记密码</a></li>
                 </ul>
                 <div class="nav-header" data-toggle="collapse" data-target="#settings-menu"><i class="icon-exclamation-sign"></i>注意事项</div>
                 <ul id="settings-menu" class="nav nav-list collapse in">
                   
-                  <li ><a href="standard-program-format.jsp">标程格式</a></li>
-                  <li ><a href="random-program-format.jsp">随机程序格式</a></li>
+                  <li ><a href="./pages/standard-program-format.jsp">标程格式</a></li>
+                  <li ><a href="./pages/random-program-format.jsp">随机程序格式</a></li>
                 </ul>
                 <div class="nav-header" data-toggle="collapse" data-target="#legal-menu"><i class="icon-legal"></i>F&Q</div>
                 <ul id="legal-menu" class="nav nav-list collapse in">
@@ -91,7 +91,7 @@
         </div>
         <div class="span9">
             <script type="text/javascript" src="./js/jquery.jqplot.min.js"></script>
-			<script type="text/javascript" charset="utf-8" src="./js/graphDemo.js"></script>
+			<script type="text/javascript" src="./js/graphDemo.js"></script>
 	<h2 class="page-title">如何使用</h2>
 	<div class="row-fluid">
 	    <div class="block">

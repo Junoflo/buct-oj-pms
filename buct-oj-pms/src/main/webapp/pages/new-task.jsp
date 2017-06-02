@@ -166,7 +166,7 @@
                         </a>
                     </li>
                 </ul>
-                <a class="brand" href="index.jsp"><span class="first"></span> <span class="second">OJ出题管理系统</span></a>
+                <span style='margin-left:10px'><a href='../index.jsp'><font size='5'>OJ出题管理系统</font></a></span>
             </div>
         </div>
     </div>
@@ -298,7 +298,7 @@
 	    </div>
 	</div>
 	<div style="height:200px;margin-left:230px;margin-top:30px;">
-    		<button id="btnSubmit" class="btn btn-primary btn-lg">提交后台</button>
+    		<button id="btnSubmit" class="btn btn-primary">提交后台</button>
     		<button class="btn btn-primary btn-lg" style="margin-left:300px">重置内容</button>
     </div>
 	

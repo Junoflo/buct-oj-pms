@@ -125,7 +125,7 @@
                     </li>
                     
                 </ul>
-                <a class="brand" href="index.jsp"><span class="first"></span> <span class="second">OJ出题管理系统</span></a>
+                <span style='margin-left:10px'><a href='../index.jsp'><font size='5'>OJ出题管理系统</font></a></span>
             </div>
         </div>
     </div>
@@ -137,7 +137,7 @@
                 <div class="sidebar-nav">
                   <div class="nav-header" data-toggle="collapse" data-target="#dashboard-menu"><i class="icon-dashboard"></i>功能列表</div>
                     <ul id="dashboard-menu" class="nav nav-list collapse in">
-                        <li><a href="index.jsp">首页</a></li>
+                        <li><a href="../index.jsp">首页</a></li>
                         <li ><a href="record.jsp">提交记录</a></li>
                         <li ><a href="newtask-select.jsp">新建任务</a></li>
                         <li ><a href="export.jsp">导出任务</a></li>

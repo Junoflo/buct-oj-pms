@@ -151,7 +151,7 @@
                         </a>
                     </li>
                 </ul>
-                <a class="brand" href="index.jsp"><span class="first"></span> <span class="second">OJ出题管理系统</span></a>
+                <span style='margin-left:10px'><a href='../index.jsp'><font size='5'>OJ出题管理系统</font></a></span>
             </div>
         </div>
     </div>
@@ -188,8 +188,8 @@
             </div>
         </div>
         <div class="span9">
-            <script type="text/javascript" src	="js/jquery.jqplot.min.js"></script>
-			<script type="text/javascript" src = "js/graphDemo.js"></script>
+            <script type="text/javascript" src	="../js/jquery.jqplot.min.js"></script>
+			<script type="text/javascript" src = "../js/graphDemo.js"></script>
 	<h2 class="page-title">爬虫抓题</h2>
 		<hr>
 		<div style="height:200px;width:100%;margin-left:200px">
