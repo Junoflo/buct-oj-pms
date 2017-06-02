@@ -1,29 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme() + "://"+ request.getServerName() + ":" + request.getServerPort()+ path + "/";
-%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>新建任务－OJ出题管理系统</title>
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-	<base href="<%=basePath%>">  
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap-responsive.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/theme.css">
-    <link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.css">
+    <title>新建任务－OJ出题管理系统</title>  
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="../css/theme.css">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
     
-	<script type = "text/javascript" src = "lib/jquery-1.8.1.min.js"></script>
-    <script type = "text/javascript" src = "js/ajaxfileupload.js"></script>
-	<script type = "text/javascript" src = "lib/bootstrap/js/bootstrap.js"></script>
+	<script type = "text/javascript" src = "../js/jquery-3.1.1.min.js"></script>
+    <script type = "text/javascript" src = "../js/ajaxfileupload.js"></script>
+	<script type = "text/javascript" src = "../js/bootstrap.js"></script>
     
     <style type="text/css">
         #line-chart {
@@ -72,11 +63,6 @@ String basePath = request.getScheme() + "://"+ request.getServerName() + ":" + r
 			})
 		})
 	</script>
-    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
   </head>
   <body> 
     <div class="navbar">
@@ -132,8 +118,8 @@ String basePath = request.getScheme() + "://"+ request.getServerName() + ":" + r
             </div>
         </div>
         <div class="span9">
-            <script type="text/javascript" src	="js/jquery.jqplot.min.js"></script>
-			<script type="text/javascript" src = "js/graphDemo.js"></script>
+            <script type="text/javascript" src	="../js/jquery.jqplot.min.js"></script>
+			<script type="text/javascript" src = "../js/graphDemo.js"></script>
 	<h1 class="page-title">新建任务</h1>
 	<h3>请按照<a href="#sampleXML">示例格式</a>提交一份xml文件,其中包含你所需要处理的所有题目</h3>
 	<font color='red'>说明:</font>遇到冲突字符不必转义,提交的文件后缀可以为txt

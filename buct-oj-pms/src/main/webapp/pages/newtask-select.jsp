@@ -6,17 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>新建任务-OJ出题管理系统</title>
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+   
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/font-awesome.css">
 
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap-responsive.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/theme.css">
-    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
-
-    <script src="lib/jquery-1.8.1.min.js" type="text/javascript"></script>
+    <script src="../js/jquery-3.1.1.min.js" type="text/javascript"></script>
 
     <style type="text/css">
         #line-chart {
@@ -39,11 +35,6 @@
         }
     </style>
 
-    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
   </head>
   <body>
     <div class="navbar">
@@ -100,8 +91,8 @@
             </div>
         </div>
         <div class="span9">
-            <script type="text/javascript" src="js/jquery.jqplot.min.js"></script>
-			<script type="text/javascript" charset="utf-8" src="js/graphDemo.js"></script>
+            <script type="text/javascript" src="../js/jquery.jqplot.min.js"></script>
+			<script type="text/javascript" charset="utf-8" src="../js/graphDemo.js"></script>
 	<h2 class="page-title">新建任务</h2>
 	<hr>
 	<p><a href="new-task.jsp">单任务提交入口</a></p>
@@ -111,6 +102,6 @@
   <div style="height:150px">
 </div>
 </div>
-    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="../js/bootstrap.js"></script>
   </body>
 </html>
