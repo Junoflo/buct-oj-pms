@@ -7,14 +7,14 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>新建任务－OJ出题管理系统</title>  
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap-responsive.css">
-    <link rel="stylesheet" type="text/css" href="../css/theme.css">
-    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/theme.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
     
-	<script type = "text/javascript" src = "../js/jquery-3.1.1.min.js"></script>
-    <script type = "text/javascript" src = "../js/ajaxfileupload.js"></script>
-	<script type = "text/javascript" src = "../js/bootstrap.js"></script>
+	<script type = "text/javascript" src = "js/jquery-3.1.1.min.js"></script>
+    <script type = "text/javascript" src = "js/ajaxfileupload.js"></script>
+	<script type = "text/javascript" src = "js/bootstrap.js"></script>
     
     <style type="text/css">
         #line-chart {
@@ -82,7 +82,7 @@
                         </a>
                     </li>
                 </ul>
-                <span style='margin-left:10px'><a href='../index.jsp'><font size='5'>OJ出题管理系统</font></a></span>
+                <span style='margin-left:10px'><a href='index.jsp'><font size='5'>OJ出题管理系统</font></a></span>
             </div>
         </div>
     </div>
@@ -118,8 +118,8 @@
             </div>
         </div>
         <div class="span9">
-            <script type="text/javascript" src	="../js/jquery.jqplot.min.js"></script>
-			<script type="text/javascript" src = "../js/graphDemo.js"></script>
+            <script type="text/javascript" src	="js/jquery.jqplot.min.js"></script>
+			<script type="text/javascript" src = "js/graphDemo.js"></script>
 	<h1 class="page-title">新建任务</h1>
 	<h3>请按照<a href="#sampleXML">示例格式</a>提交一份xml文件,其中包含你所需要处理的所有题目</h3>
 	<font color='red'>说明:</font>遇到冲突字符不必转义,提交的文件后缀可以为txt

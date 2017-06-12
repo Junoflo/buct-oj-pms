@@ -6,14 +6,14 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>提交记录-OJ出题管理系统</title>
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap-responsive.css">
-    <link rel="stylesheet" type="text/css" href="../css/theme.css">
-    <link rel="stylesheet" href="../css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/theme.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
 
-    <script src="../js/jquery-3.1.1.min.js" type="text/javascript"></script>
-	<script src="../js/json2.js" type="text/javascript"></script>
-	<script src="../js/layer.js" type="text/javascript"></script>
+    <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+	<script src="js/json2.js" type="text/javascript"></script>
+	<script src="js/layer.js" type="text/javascript"></script>
     <style type="text/css">
         #line-chart {
             height:300px;
@@ -383,7 +383,7 @@
                     </li>
                     
                 </ul>
-                <span style='margin-left:10px'><a href='../index.jsp'><font size='5'>OJ出题管理系统</font></a></span>
+                <span style='margin-left:10px'><a href='index.jsp'><font size='5'>OJ出题管理系统</font></a></span>
             </div>
         </div>
     </div>
@@ -394,7 +394,7 @@
                 <div class="sidebar-nav">
                   <div class="nav-header" data-toggle="collapse" data-target="#dashboard-menu"><i class="icon-dashboard"></i>功能列表</div>
                     <ul id="dashboard-menu" class="nav nav-list collapse in">
-                        <li><a href="index.jsp">首页</a></li>
+                        <li ><a href="index.jsp">首页</a></li>
                         <li ><a href="record.jsp">提交记录</a></li>
                         <li ><a href="newtask-select.jsp">新建任务</a></li>
                         <li ><a href="export.jsp">导出任务</a></li>
@@ -456,6 +456,6 @@
     <div style="height:150px">
 </div>
 </div>
-    <script src="../js/bootstrap.js"></script>
+    <script src="js/bootstrap.js"></script>
   </body>
 </html>

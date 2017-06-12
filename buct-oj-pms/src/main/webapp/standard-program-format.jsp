@@ -5,14 +5,14 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>随机程序格式-OJ出题管理系统</title>
-    
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap-responsive.css">
-    <link rel="stylesheet" type="text/css" href="../css/theme.css">
-    <link rel="stylesheet" href="../css/font-awesome.css">
+    <title>标程格式-OJ出题管理系统</title>
+ 
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/theme.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
 
-    <script src="../js/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 
     <style type="text/css">
         #line-chart {
@@ -50,7 +50,7 @@
                 <ul class="nav pull-right">
                     
                     <li id="fat-menu" class="dropdown">
-                         <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                        <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="icon-user"></i>
                             <c:set var="str" scope="page" value="${curent_user.name}"/>
                             <c:if test="${empty str}">
@@ -60,10 +60,16 @@
 								当前用户：${str} &nbsp;&nbsp;&nbsp;
 							</c:if>
                         </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="#">账户设置</a></li>
+                            <li class="divider"></li>
+                            <li><a tabindex="-1" href="sign-in.html">登出</a></li>
+                        </ul>
                     </li>
                     
                 </ul>
-                <span style='margin-left:10px'><a href='../index.jsp'><font size='5'>OJ出题管理系统</font></a></span>
+                <span style='margin-left:10px'><a href='index.jsp'><font size='5'>OJ出题管理系统</font></a></span>
             </div>
         </div>
     </div>
@@ -115,13 +121,13 @@
 		        		<ol>
 		        			<li>
 		        				<div class="div1">
-		        					随机程序格式与普通程序同样差别也不大,需要改动的只是输出(随机程序没有输入)
+		        					标程的格式与ACM标程大同小异,只是在输入输出上要做一些改变
 		        				</div>
 		        			</li>
 		        			<li>
 		        				<div class="div1">
-		        					将标准输出改为使用文件输出.&nbsp;&nbsp;&nbsp;并且&nbsp;,&nbsp;输出文件名分别为
-		        					<font color='red' size='5px'>data.txt</font>!
+		        					将标准输入输出改为使用文件输入输出.&nbsp;&nbsp;&nbsp;并且&nbsp;,&nbsp;输入输出文件名分别为
+		        					<font color='red' size='5px'>in.txt,out.txt!</font>
 		        				</div>
 		        			</li>
 		        			<li>
@@ -148,26 +154,22 @@
 		    	<div class="block">
 		        	<pre>
 		        	<blockcode>
-#include &#60;iostream>
-#include &#60;fstream>
-#include &#60;ctime>
-#include &#60;cstdlib>
+#include &#60;iostream&#62;
+#include &#60;fstream&#62;
 using namespace std;
-double random(double start, double end){
-	return start+(end-start)*rand()/(RAND_MAX + 1.0);
-}
 int main(){
-	freopen("data.txt","w",stdout);
-	srand(time(0));
-	int count=0;
-	while(count&#60;30){
-		int num1=(int)random(1,100);
-		int num2=(int)random(1,100);
-		int num3=(int)random(1,100);
-		cout&#60;&#60;num1&#60;&#60;" "&#60;&#60;num2&#60;&#60;" "&#60;&#60;num3&#60;&#60;endl;
-		cout&#60;&#60;"###"&#60;&#60;endl;//"###"为每一个测试样例的分隔符,由用户自己指定,注意不要与输出冲突
-		count++;
+	freopen("in.txt","r",stdin);
+	freopen("out.txt","w",stdout);
+	int a,b;
+	int res=0;
+	while(cin>>a>>b){
+		if(a==0&&b==0){
+			break;
+		}
+		res+=a*b;
 	}
+	cout&#60;&#60;res&#60;&#60;endl;
+	return 0;
 }
 </blockcode>
 </pre>
@@ -179,41 +181,41 @@ int main(){
 		    	<div class="block">
 		        	<pre>
 		        	<blockcode>
-#include &#60;iostream>
-#include &#60;fstream>
-#include &#60;ctime>
-#include &#60;cstdlib>
+#include &#60;iostream&#62;
+#include &#60;fstream&#62;
 using namespace std;
-double random(double start, double end){
-	return start+(end-start)*rand()/(RAND_MAX + 1.0);
+int findNum(int a[],int len, int target){
+	for(int i=0; i&#60;len; i++){
+		if(a[i]==target){
+			return i;
+		}
+	}
+	return -1;
 }
 int main(){
-	freopen("data.in","w",stdout);
-	srand(time(0));
-	int count=0;
-	int size,target;
-	while(count&#60;20){
-		size=random(1,10);
-		target=random(1,100);
-		cout&#60;&#60;size&#60;&#60;" "&#60;&#60;target&#60;&#60;endl;
-		for(int i=0; i&#60;size; i++){
-			int num=random(1,100);
-			cout&#60;&#60;num&#60;&#60;" ";
-		}
-		cout&#60;&#60;endl;
-		cout&#60;&#60;"###"&#60;&#60;endl;
-		count++;
+	freopen("in.txt","r",stdin);
+	freopen("out.txt","w",stdout);
+	int size;
+	cin&#62;&#62;size;
+	int a[size];
+	int target;
+	cin&#62;&#62;target;
+	for(int i=0; i&#60;size; i++){
+		cin&#62;&#62;a[i];
 	}
+	cout&#60;&#60;findNum(a,size,target)&#60;&#60;endl;
+	return 0 ;
 }
 </blockcode>
 </pre>
 		    	</div>
 			</div>
+	
+    		<div style="height:300px">
+    		</div>
   </div>
 </div>
-<div style="height:100px">
 </div>
-</div>
-    <script src="../js/bootstrap.js"></script>
+    <script src="js/bootstrap.js"></script>
   </body>
 </html>

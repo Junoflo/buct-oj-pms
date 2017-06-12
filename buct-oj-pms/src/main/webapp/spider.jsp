@@ -7,14 +7,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>爬虫抓题-OJ出题管理系统</title>
 
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap-responsive.css">
-    <link rel="stylesheet" type="text/css" href="../css/theme.css">
-    <link rel="stylesheet" href="../css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/theme.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
 
-    <script src="../js/jquery-3.1.1.min.js" type="text/javascript"></script>
-    <script src="../js/bootstrap.js"></script>
-	<script src="../js/json2.js" type="text/javascript"></script>
+    <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.js"></script>
+	<script src="js/json2.js" type="text/javascript"></script>
     <style type="text/css">
         #line-chart {
             height:300px;
@@ -151,7 +151,7 @@
                         </a>
                     </li>
                 </ul>
-                <span style='margin-left:10px'><a href='../index.jsp'><font size='5'>OJ出题管理系统</font></a></span>
+                <span style='margin-left:10px'><a href='index.jsp'><font size='5'>OJ出题管理系统</font></a></span>
             </div>
         </div>
     </div>
@@ -188,8 +188,8 @@
             </div>
         </div>
         <div class="span9">
-            <script type="text/javascript" src	="../js/jquery.jqplot.min.js"></script>
-			<script type="text/javascript" src = "../js/graphDemo.js"></script>
+            <script type="text/javascript" src	="js/jquery.jqplot.min.js"></script>
+			<script type="text/javascript" src = "js/graphDemo.js"></script>
 	<h2 class="page-title">爬虫抓题</h2>
 		<hr>
 		<div style="height:200px;width:100%;margin-left:200px">

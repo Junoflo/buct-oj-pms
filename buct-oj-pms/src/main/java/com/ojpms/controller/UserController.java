@@ -24,14 +24,14 @@ public class UserController {
 		String str = MyUtils.decoder(jsonString);
 		System.out.println("解析过后:" + str);
 		JSONObject jsonObject = JSONObject.fromObject(str);
-		User user = userService.query(jsonObject.getString("name"), jsonObject.getString("pass"));
+		User user = userService.query(jsonObject.getString("name"), jsonObject.getString("pswd"));
 		JSONObject res = new JSONObject();
 		System.out.println(user);
 		if(user == null){
 			res.put("result", "failed");
 			return res;
 		}
-		res.put("result", user);
+		res.put("result", "success");
 		return res;
 	}
 	@RequestMapping("/register")

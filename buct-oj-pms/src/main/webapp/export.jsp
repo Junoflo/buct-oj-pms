@@ -7,14 +7,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>导出任务-OJ出题管理系统</title>
     
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap-responsive.css">
-    <link rel="stylesheet" type="text/css" href="../css/theme.css">
-    <link rel="stylesheet" href="../css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/theme.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
 
-    <script src="../js/jquery-3.1.1.min.js" type="text/javascript"></script>
-     <script src="../js/bootstrap.js"></script>
-	<script src="../js/json2.js" type="text/javascript"></script>
+    <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.js"></script>
+	<script src="js/json2.js" type="text/javascript"></script>
     <style type="text/css">
         #line-chart {
             height:300px;
@@ -34,10 +34,12 @@
     </style>
     <script type = "text/javascript">
 	    $(function () {
-	    	//alert("${curent_user.id}");
+	    	$("#no-content-div").hide();
+    		$("#content-div").hide();
 	    	var myJSONObject = {
 	    			"uid" : "${curent_user.id}"
 	    	};
+	    	
 	    	var str = JSON.stringify(myJSONObject) ;
 	    	$.ajax({
 		        cache : false,
@@ -46,17 +48,30 @@
 		            url:'problem/briefQueryByUid',
 		            data:{jsonString:encodeURI(str)},
 		        success:function(data){
-		            process(data);
+		        	alert("asd");
+		            processSucc(data);
+		        },
+		        error:function(){
+		        	processFailed();
 		        }
+		          
 		    });
 	    })
-	    function process(data){
+	    function processFailed(){
+	    	$("#no-content-div").show();
+    		$("#content-div").hide();
+    		return ;
+	    }
+	    function processSucc(data){
+	    	alert(data.result);
 	    	if(data.result == "faild"){
-	    	//	alert("呵呵");
-	    		var str = "<font color='red'>没有查询到相关记录!</font>";
-	    		$("#mainDiv").html(str);
+	    		$("#no-content-div").show();
+	    		$("#content-div").hide();
+	    		return ;
 	    	}
-	    	var str = '';
+	    	$("#content-div").show();
+	    	$("#no-content-div").hide();
+	    	var str = "";
 	    	str += "<table class = 'table' ";
 	    	str += "<thead> <tr> <th>编号</th> <th>题目ID</th> <th>题目名称</th>"+
 	    	"<th>提交时间</th> <th>操作</th> </tr> </thead>";
@@ -72,15 +87,7 @@
 	    	}
 	    	str += "</tbody>";
 	    	str += '</table>';
-	    	//alert(str);
 	    	$("#record_table").html(str);
-	    }
-	    function transferDate(stamp){
-	    	var date = new Date(stamp);  
-	        var str = date.getFullYear() + "-" + (date.getMonth() + 1) + 
-	        	"-"+date.getDate() + " " + date.getHours() + ":" + date.getMinutes();
-	       // alert(str);
-	        return str;
 	    }
 	    $(function(){
 	    	$("#btnSubmit").click(function(){
@@ -125,7 +132,7 @@
                     </li>
                     
                 </ul>
-                <span style='margin-left:10px'><a href='../index.jsp'><font size='5'>OJ出题管理系统</font></a></span>
+                <span style='margin-left:10px'><a href='index.jsp'><font size='5'>OJ出题管理系统</font></a></span>
             </div>
         </div>
     </div>
@@ -137,7 +144,7 @@
                 <div class="sidebar-nav">
                   <div class="nav-header" data-toggle="collapse" data-target="#dashboard-menu"><i class="icon-dashboard"></i>功能列表</div>
                     <ul id="dashboard-menu" class="nav nav-list collapse in">
-                        <li><a href="../index.jsp">首页</a></li>
+                        <li><a href="index.jsp">首页</a></li>
                         <li ><a href="record.jsp">提交记录</a></li>
                         <li ><a href="newtask-select.jsp">新建任务</a></li>
                         <li ><a href="export.jsp">导出任务</a></li>
@@ -166,32 +173,27 @@
             </div>
         </div>
         <div class="span9">
-            <script type="text/javascript" src="../js/jquery.jqplot.min.js"></script>
-			<script type="text/javascript" charset="utf-8" src="../js/graphDemo.js"></script>
-	<h2 class="page-title">已完成任务</h2>
-	
-	<div id = "mainDiv">
-   <div class="row-fluid">
-    <div class="block">
-        <div class="block-heading" data-toggle="collapse" data-target="#widget2container">History</div>
-        <div id="widget2container" class="block-body collapse in">
-        	<div id = "record_table">
-        	</div>
-        </div>
+            <script type="text/javascript" src="js/jquery.jqplot.min.js"></script>
+			<script type="text/javascript" charset="utf-8" src="js/graphDemo.js"></script>
+			<h2 class="page-title">已完成任务</h2>
+			<div id="no-content-div">
+				<font color='red' size='3'>没有查询到相关记录...</font>
+			</div>
+			<div id="content-div">	
+			    <div class="block">
+			    	<div id = "record_table">
+			        </div>
+			    </div>
+				<div style="height:100px;">
+					<form action = "common/exportTask" method = "post">
+						<input id="uid" type='hidden' name="uid">
+						<input id="pids" type='hidden' name="pids">
+						<button id="btnSubmit" type="submit" class="btn btn-primary btn-lg">导出选中题目</button>
+					</form>
+		    	</div>
+			</div>
+		</div>
     </div>
 	</div>
-	
-	<div style="height:100px;">
-			<form action = "common/exportTask" method = "post">
-				<input id="uid" type='hidden' name="uid">
-				<input id="pids" type='hidden' name="pids">
-				<button id="btnSubmit" type="submit" class="btn btn-primary btn-lg">导出选中题目</button>
-			</form>
-    </div>
-	</div>
-	</div>
-    </div>
-</div>
-   
-  </body>
+</body>
 </html>
